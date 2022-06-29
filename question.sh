@@ -41,7 +41,7 @@
 #
 #  >>> Escriba su codigo a partir de este punto <<<
 #
-data.csv > datos.csv
+cat data.csv > datos.csv
 sed 's/\([0-9][0-9]\)\/\([0-9][0-9]\)\/\([0-9][0-9]\)/20\3-\2-\1/g' datos.csv > datos0.csv
 sed 's/\([0-9]\)\/\([0-9]\)\/\([0-9][0-9][0-9][0-9]\);/\3-0\2-0\1;/g' datos0.csv > datos1.csv
 cat datal2.csv |tr '[:lower:]' '[:upper:]'| tr ',' '.'| tr ';' ','>datos2.csv
