@@ -44,8 +44,8 @@
 cat data.csv > datos.csv
 sed 's/\([0-9][0-9]\)\/\([0-9][0-9]\)\/\([0-9][0-9]\)/20\3-\2-\1/g' datos.csv > datos0.csv
 sed 's/\([0-9]\)\/\([0-9]\)\/\([0-9][0-9][0-9][0-9]\);/\3-0\2-0\1;/g' datos0.csv > datos1.csv
-cat datosl.csv |tr '[:lower:]' '[:upper:]'| tr ',' '.'| tr ';' ',' > datos2.csv
-sed 's/,,/,\\N,/g' datos2.csv > datos3.csv
+cat datal2.csv |tr '[:lower:]' '[:upper:]'| tr ',' '.'| tr ';' ','>datos2.csv
+sed 's/,,/,\\N,/g' datos2.csv>datos3.csv
 sed 's/,N/,\\N/g' datos3.csv > datos4.csv
 sed 's/\([0-9][0-9][0-9][0-9]\)-\([0-9][0-9]\)-\([0-9][0-9]\),\(\\[A-Z]\),\(\\[A-Z]\),/\1-\2-\3,\4,\5,\\N/g' datos4.csv > datos5.csv
 sed 's/\(2014\)-\(05\)-\(12\),\(C\),\(\\[A-Z]\),/\1-\2-\3,\4,\5,\\N/g' datos5.csv > datfinal.csv
